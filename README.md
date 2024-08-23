@@ -11,4 +11,18 @@
 - set DB password **DB_PASSWORD**
 - after that run command ```php artisan key:generate```
 - and command ```php artisan migrate```
-- 
+- and finally run command ```php artisan schedule:work```
+
+
+## How to use
+
+Using Postman send request to the **http://localhost:8230/api/v1/subscription**
+
+with next parameters
+
+<img src="public/img/postman.png">
+
+and visiting **http://localhost:8025** you can see your email
+
+<img src="public/img/subscribed.png">
+
