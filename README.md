@@ -8,6 +8,8 @@
 
 [Diagram](#diagram)
 
+[Variants](#variants)
+
 
 ## How to run locally
 
@@ -47,3 +49,11 @@ Diagram can be checked by PhpStorm IDE
 ## Test and PINT
 
 When you are into the container (```make app-bash```) you can check code quality ```./vendor/bin/pint app``` and run tests ```php artisan config:clear && php artisan test```
+
+## Variants
+
+There are two variants
+- API
+- web page parsing
+
+first one is better but it requires some organization; second one doesn't require organization but it is not a good solution (because of possible web page markup changes)
