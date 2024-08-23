@@ -43,3 +43,7 @@ when price is changed you will receive email
 ## Diagram
 
 Diagram can be checked by PhpStorm IDE
+
+## Test and PINT
+
+When you are into the container (```make app-bash```) you can check code quality ```./vendor/bin/pint app``` and run tests ```php artisan config:clear && php artisan test```
