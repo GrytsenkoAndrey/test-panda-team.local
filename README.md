@@ -1,5 +1,14 @@
 # Test Task
 
+## Table of content
+
+[How to run locally](#how-to-run-locally)
+
+[How to use](#how-to-use)
+
+[Diagram](#diagram)
+
+
 ## How to run locally
 
 - clone project to the local directory
@@ -26,3 +35,11 @@ and visiting **http://localhost:8025** you can see your email
 
 <img src="public/img/subscribed.png">
 
+when price is changed you will receive email
+
+<img src="public/img/price_changed.png">
+
+
+## Diagram
+
+Diagram can be checked by PhpStorm IDE

@@ -29,15 +29,15 @@ class CheckSubcriptionPriceCommand extends Command
      * Execute the console command.
      */
     public function handle(
-        ParseOlxPriceService $parseOlxPriceService,
-        GetPriceService $getPriceService
+        ParseOlxPriceService $parseOlxPriceService
     ) {
         $this->info('Check subscription price');
         $bar = $this->output->createProgressBar(Subscription::count());
 
         $bar->start();
 
-        foreach (Subscription::get(['url', 'email', 'price', 'updated_at']) as $subscription) {
+        $subscriptions = Subscription::get(['id', 'url', 'email', 'price']);
+        foreach ($subscriptions as $subscription) {
             $element = $parseOlxPriceService->parse($subscription->url);
             if (! $element) {
                 $bar->advance();
@@ -52,6 +52,7 @@ class CheckSubcriptionPriceCommand extends Command
             }
 
             $subscription->update(['price' => $currentPrice]);
+
             Mail::to($subscription->email)
                 ->send(new PriceChangedMail(
                     url: $subscription->url,
