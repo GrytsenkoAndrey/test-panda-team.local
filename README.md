@@ -17,7 +17,7 @@
 - run command into the terminal ```make app-bash```
 - into the container run command ```composer install```, wait until the end of installation
 - make copy of **.env.example** ```cp .env.example .env```
-- set DB password **DB_PASSWORD**
+- set DB password - env variable **DB_PASSWORD**
 - after that run command ```php artisan key:generate```
 - and command ```php artisan migrate```
 - and finally run command ```php artisan schedule:work```
